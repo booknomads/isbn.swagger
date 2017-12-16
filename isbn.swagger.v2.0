@@ -18,7 +18,7 @@ paths:
           description: ISBN code
       responses:
         200:
-          description: Book mathing the ISBN requested
+          description: Book mathing the requested ISBN
           schema:
             $ref: '#/definitions/BookItem'
         500:

@@ -20,9 +20,7 @@ paths:
         200:
           description: Book mathing the ISBN requested
           schema:
-            type: object
-            items:
-              $ref: '#/definitions/BookItem'
+            $ref: '#/definitions/BookItem'
         500:
           description: bad input parametr/missing book
 definitions:

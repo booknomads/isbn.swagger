@@ -29,5 +29,8 @@ $ curl -s https://www.booknomads.com/api/v0/isbn/9789000010134 | json_pp
 ```
 
 The thumbnails are base64 encoded images(scaled to 200x200 using https://github.com/nfnt/resize).
+
 Try it out at [https://app.swaggerhub.com/apis/BookNomads/book_by_isbn/1.0.0](https://app.swaggerhub.com/apis/BookNomads/book_by_isbn/1.0.0)
+
+Read more at [https://www.booknomads.com/dev](https://www.booknomads.com/dev)
 

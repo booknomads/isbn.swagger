@@ -1,0 +1,72 @@
+swagger: '2.0'
+info:
+  description:  Find book by ISBN
+  version: 1.0.0
+  title:  Find book by ISBN
+  contact:
+    email: info@booknomads.com
+
+paths:
+  /isbn/{ISBN}:
+   get:
+      summary: Find book by ISBN
+      parameters:
+        - in: path
+          name: ISBN
+          type: string
+          required: true
+          description: ISBN code
+      responses:
+        200:
+          description: Book mathing the ISBN requested
+          schema:
+            type: object
+            items:
+              $ref: '#/definitions/BookItem'
+        500:
+          description: bad input parametr/missing book
+definitions:
+  BookItem:
+    type: object
+    properties:
+      ISBN:
+        type: string
+        example: 9789000035526
+      Title:
+        type: string
+        example: Tobbe
+      LanguagCode:
+        type: string
+        example: nl        
+      Subtitle:
+        type: string
+
+      Description:
+        type: string
+        description: the description of the book, empty if missing
+      
+      CoverThumb:
+        type: string
+        description: base64 encoded 200x200 scaled thumbnail of the front cover, empty if missing
+        example: data:image/jpeg;base64,/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQN...
+      
+      Subjects:
+        type: array
+        items:
+          type: string
+            
+      Authors:
+        type: array
+        items:
+          $ref: '#/definitions/Author'
+
+  Author:
+    type: object
+    properties:
+      Name:
+        type: string          
+
+host: www.booknomads.com
+basePath: /api/v0/
+schemes:
+ - https
